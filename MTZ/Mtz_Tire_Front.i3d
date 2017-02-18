@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="Mtz_Tire_front" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+
+  <Files>
+    <File fileId="1" filename="mtz_textura/Mtz_kerek_Diffuse.dds" relativePath="true"/>
+    <File fileId="2" filename="mtz_textura/Mtz_kerek_normal.dds" relativePath="true"/>
+    <File fileId="3" filename="mtz_textura/Mtz_kerek_spec.dds" relativePath="true"/>
+    <File fileId="4" filename="../shaders/vehicleShader.xml" relativePath="true"/>
+    <File fileId="5" filename="../shared/dirt_normal.png" relativePath="true"/>
+  </Files>
+
+  <Materials>
+    <Material name="Tire_material" materialId="1" cosPower="20" specularColor="1 1 1" ambientColor="1 1 1" customShaderId="4" customShaderVariation="tirePressureDeformation">
+      <CustomParameter name="RDT" value="1.0 1.0 40.0 40.0"/>
+      <CustomParameter name="morphPosition" value="-0.31 -0.9 0.5 0.19"/>
+      <Custommap name="DirtNmap" fileId="5"/>
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="Mtz_Tire_Front.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="tire" collision="false" clipDistance="300" nodeId="1">
+      <Shape name="tire_front_80" shapeId="1" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="2"/>
+      <Shape name="tire_front_82" shapeId="2" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="3"/>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+  </UserAttributes>
+</i3D>

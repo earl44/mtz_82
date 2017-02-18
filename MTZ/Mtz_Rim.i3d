@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="Mtz_kerek" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+
+  <Files>
+    <File fileId="1" filename="mtz_textura/Mtz_kerek_Diffuse.dds" relativePath="true"/>
+    <File fileId="2" filename="mtz_textura/Mtz_kerek_normal.dds" relativePath="true"/>
+    <File fileId="3" filename="mtz_textura/Mtz_kerek_spec.dds" relativePath="true"/>
+    <File fileId="4" filename="../shaders/vehicleShader.xml" relativePath="true"/>
+    <File fileId="5" filename="../shared/dirt_normal.png" relativePath="true"/>
+  </Files>
+
+  <Materials>
+    <Material name="Tire_material" materialId="1" cosPower="20" specularColor="1 1 1" ambientColor="1 1 1" customShaderId="4" customShaderVariation="colorMask">
+      <CustomParameter name="RDT" value="1.0 1.0 20.0 20.0"/>
+      <CustomParameter name="colorScale" value="0.8 0.55 0.055 1.0"/>
+      <Custommap name="DirtNmap" fileId="5"/>
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="Mtz_Rim.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="front_80" collision="false" clipDistance="300" nodeId="1">
+      <Shape name="front_rim_Left" shapeId="1" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="2"/>
+      <Shape name="front_rim_Right" shapeId="2" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="3"/>
+      <Shape name="Front_rim_80" translation="0 3.8147e-08 -4.76837e-08" shapeId="3" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="4"/>
+    </TransformGroup>
+    <TransformGroup name="hatso_felni" collision="false" clipDistance="300" nodeId="5">
+      <Shape name="hatso_left" shapeId="4" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="6"/>
+      <Shape name="hatso_Right" shapeId="5" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="7"/>
+      <Shape name="rim_hatso" translation="0 -9.53674e-08 7.62939e-08" shapeId="6" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="8"/>
+    </TransformGroup>
+    <TransformGroup name="Front_rim_82" collision="false" clipDistance="300" nodeId="9">
+      <Shape name="front_rim_Left" shapeId="7" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="10"/>
+      <Shape name="front_rim_Right" shapeId="8" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="11"/>
+      <Shape name="rim82" shapeId="9" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="12"/>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+  </UserAttributes>
+</i3D>

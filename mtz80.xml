@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="mtz">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>MTZ 80</name>
+        <specs>
+            <power>80</power>
+            <maxSpeed>33</maxSpeed>
+        </specs>
+        <functions>
+            <function>$l10n_function_tractor</function>
+        </functions>
+        <image>store_mtz82.dds</image>
+        <price>9700</price>
+        <dailyUpkeep>250</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>MTZ</brand>
+        <category>tractors</category>
+        <fieldJob sizeCategory="1" typeCategory="tractor" hasFrontAndBackHydraulics="false" />
+        <vertexBufferMemoryUsage>1728608</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>295512</indexBufferMemoryUsage>
+        <textureMemoryUsage>4700088</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <typeDesc>$l10n_typeDesc_tractor</typeDesc>
+    <filename>mtz82.i3d</filename>
+
+    <size width="3" length="5"/>
+
+    <wheelConfigurations>
+        <wheelConfiguration name="80" price="0">
+            <wheels autoRotateBackSpeed="1.7">
+                <wheel rotSpeed="1" restLoad="1.5" repr="1>1|0|0" driveNode="1>1|0|0|0|0" forcePointRatio="0.2" filename="MTZ/mtz82elso.xml" isLeft="true"  initialCompression="20" suspTravel="0.16" spring="27" damper="15" hasTireTracks="true" hasParticles="true" />
+                <wheel rotSpeed="1" restLoad="1.5" repr="1>1|1|0" driveNode="1>1|1|0|0|0" forcePointRatio="0.2" filename="MTZ/mtz82elso.xml" isLeft="false" initialCompression="20" suspTravel="0.16" spring="27" damper="15" hasTireTracks="true" hasParticles="true" />
+                <wheel rotSpeed="0" restLoad="1.2" repr="0>0"                         forcePointRatio="0.3" filename="MTZ/mtzhatso.xml" isLeft="true"  initialCompression="20" suspTravel="0.16" spring="25" damper="15" hasTireTracks="true" hasParticles="true" />
+                <wheel rotSpeed="0" restLoad="1.2" repr="0>1"                         forcePointRatio="0.3" filename="MTZ/mtzhatso.xml" isLeft="false" initialCompression="20" suspTravel="0.16" spring="25" damper="15" hasTireTracks="true" hasParticles="true" />
+            </wheels>
+        </wheelConfiguration>
+    </wheelConfigurations>
+
+    <ackermannSteeringConfigurations>
+        <ackermannSteering rotSpeed="70" rotMax="35" rotCenterWheel1="2" rotCenterWheel2="3" />
+    </ackermannSteeringConfigurations>
+
+    <differentialConfigurations>
+    	<differentials>
+        	<differential torqueRatio="0.5"  maxSpeedRatio="1.8" wheelIndex1="0" wheelIndex2="1" /> <!-- front left-right -->
+        	<differential torqueRatio="0.5"  maxSpeedRatio="1.8" wheelIndex1="2" wheelIndex2="3" /> <!-- back left-right -->
+        	<differential torqueRatio="0.55" maxSpeedRatio="1.8" differentialIndex1="0" differentialIndex2="1" /> <!-- front-back -->
+    	</differentials>
+    </differentialConfigurations>
+
+    <motorConfigurations>
+        <motorConfiguration name="D-50" hp="50" price="0">
+            <motor torqueScale="0.33" minRpm="800" maxRpm="1600" maxForwardSpeed="24" maxBackwardSpeed="5" brakeForce="3.5" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="1" rotInertia="0.0012" minForwardGearRatio="14.5" maxForwardGearRatio="300" minBackwardGearRatio="40" maxBackwardGearRatio="300">
+                <torque normRpm="0.45" torque="0.9"/>
+                <torque normRpm="0.5" torque="0.97"/>
+                <torque normRpm="0.59" torque="1"/>
+                <torque normRpm="0.72" torque="1"/>
+                <torque normRpm="0.86" torque="0.88"/>
+                <torque normRpm="1" torque="0.72"/>
+            </motor>
+        </motorConfiguration>
+        <motorConfiguration name="D-240" hp="80" price="1000">
+            <motor torqueScale="0.606" minRpm="800" maxRpm="2200" maxForwardSpeed="33" maxBackwardSpeed="9" brakeForce="4.5" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="1" rotInertia="0.001" minForwardGearRatio="14.5" maxForwardGearRatio="300" minBackwardGearRatio="40" maxBackwardGearRatio="300">
+                <torque normRpm="0.45" torque="0.9"/>
+                <torque normRpm="0.5"  torque="0.97"/>
+                <torque normRpm="0.59" torque="1"/>
+                <torque normRpm="0.72" torque="1"/>
+                <torque normRpm="0.86" torque="0.88"/>
+                <torque normRpm="1"    torque="0.72"/>
+            </motor>
+        </motorConfiguration>
+    </motorConfigurations>
+
+    <fuelCapacity>120</fuelCapacity>
+
+    <cameras count="2">
+        <camera1 index="0>3|0" rotatable="true" rotateNode="0>3" limit="true" useWorldXZRotation="true" rotMinX="-1.4" rotMaxX="1" transMin="3.5" transMax="35" >
+            <raycastNode index="0>5"/>
+            <raycastNode index="0>6"/>
+        </camera1>
+        <camera2 index="0>4" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" />
+    </cameras>
+
+    <enterReferenceNode index="0>"/>
+    <exitPoint index="0>7"/>
+
+    <attacherJoints comboDuration="2">
+        <attacherJoint index="0>12|0|0" rotationNode="0>12" rotationNode2="0>12|0" upperRotation="25 0 0" lowerRotation="-21 0 0" upperDistanceToGround="0.95" lowerDistanceToGround="0.247" upperRotationOffset="-0.16" moveTime="2.5" ptoOutputNode="0>17" comboTime="1">
+            <bottomArm rotationNode="0>13" translationNode="0>13|0" referenceNode="0>13|0|0" zScale="-1" startRotation="-10.8 0 0" />
+            <topArm rotationNode="0>14" translationNode="0>14|0" referenceNode="0>14|0|0" zScale="-0.1" />
+            <schema position="1 0" rotation="0" invertX="false" />
+        </attacherJoint>
+        <attacherJoint index="0>32" transNodeMinY="0.4" transNodeMaxY="1" jointType="trailer" lowerRotLimit="10 50 50" upperRotRotationOffset="0" allowsJointLimitMovement="false" ptoOutputNode="0>17" comboTime="1" >
+            <schema position="1 0" rotation="0" invertX="false" />
+        </attacherJoint>
+        <attacherJoint index="0>28|0" transNodeMinY="0.4" transNodeMaxY="1" jointType="trailer" lowerRotLimit="10 50 50" upperRotRotationOffset="0" allowsJointLimitMovement="false" ptoOutputNode="0>17" comboTime="1" >
+            <schema position="1 0" rotation="0" invertX="false" />
+        </attacherJoint>
+        <attacherJoint index="0>31" transNodeMinY="0.4" transNodeMaxY="1" jointType="trailerLow" lowerRotLimit="10 50 50" upperRotRotationOffset="0" allowsJointLimitMovement="false" ptoOutputNode="0>17" comboTime="1" >
+            <schema position="1 0" rotation="0" invertX="false" />
+        </attacherJoint> 
+    </attacherJoints>
+    
+    <movingTools>
+		<movingTool index="0>13">
+            <dependentPart index="0>15" />
+            <dependentPart index="0>16" /> 
+        </movingTool>
+        <movingTool index="0>13">
+            <controls axis="AXIS_FRONTLOADER_ARM" invertAxis="true" invertMouseAxis="true" speedFactor="0.2" iconFilename="$dataS2/menu/moveControls/frontloader_arm.png" />
+            <attacherJoint jointIndices="5" />
+            <rotation rotSpeed="25" rotAcceleration="125" rotMax="30" rotMin="-10" />
+            <dependentPart index="0>15"/>
+            <dependentPart index="0>16"/>
+        </movingTool>
+    </movingTools>
+
+    <movingParts>
+        <movingPart index="0>15" referencePoint="0>16|1" referenceFrame="0>" invertZ="true">
+            <translatingPart index="0>15|0" />
+        </movingPart>
+        <movingPart index="0>16" referencePoint="0>13|0|1" localReferencePoint="0>16|2" referenceFrame="0>" invertZ="true">
+            <dependentPart index="0>16|2" />
+        </movingPart>
+        <movingPart index="0>16|2" referencePoint="0>13|0|1" referenceFrame="0>16|0" invertZ="true">
+        </movingPart>
+        <movingPart index="1>1|0|0|2|0" referencePoint="1>1|1|0|1" referenceFrame="1>1|1|0|1" isActiveDirty="true" >
+            <translatingPart index="1>1|0|0|2|0|0" />
+        </movingPart>
+    </movingParts>
+
+    <steering index="0>8|0" indoorRotation="540" outdoorRotation="60" />
+
+    <characterNode index="0>11|0" cameraMinDistance="1.5" filename="$dataS2/character/player/player.xml" spineRotation="180 0 100" >
+        <target ikChain="rightFoot" targetNode="0>11|1" />
+        <target ikChain="leftFoot"  targetNode="0>11|2" />
+        <target ikChain="rightArm"  targetNode="0>8|0|0" setDirty="true"/>
+        <target ikChain="leftArm"   targetNode="0>8|0|1" setDirty="true" />
+    </characterNode>
+
+    <ai>
+        <trafficCollisionTrigger index="0>9" />
+    </ai>
+
+    <exhaustEffects>
+        <exhaustEffect index="0>10" filename="$data/particleSystems/shared/exhaust.i3d" minRpmColor="0.9 0.9 0.9 0.1" maxRpmColor="0.1 0.1 0.1 0.4" minRpmScale="0.05" maxRpmScale="0.5" xzRotationsOffset="0 0" xzRotationsForward="-250 0" xzRotationsBackward="50 0" xzRotationsLeft="0 100" xzRotationsRight="0 -100" />
+    </exhaustEffects>
+
+    <motorStartDuration>4000</motorStartDuration>
+    <motorStartSound file="sound/start.wav"     pitchOffset="1"  volume="1.00" indoorVolumeFactor="0.70"  indoorLowpassGain="0.95"/>
+    <motorSound file="sound/idle.wav"           pitchOffset="1"  volume="1.00" indoorVolumeFactor="0.70"  indoorLowpassGain="0.95" volumeMin="0.60" volumeMinSpeed="15" pitchMax="1.55" />
+    <motorSoundRun file="sound/run.wav" pitchOffset="0.9" pitchScale="0.025" pitchMax="1.15" volume="0.8" />
+    <motorStopSound file="sound/out.wav"   pitchOffset="0.85"  volume="1.00" indoorVolumeFactor="0.70"  indoorLowpassGain="0.95"/>
+    <gearboxSound file="$data/sounds/transmission/transmissionCVT_X.wav"                  pitchOffset="0.65"  volume="0.25" indoorVolumeFactor="0.80"  indoorLowpassGain="0.95" pitchMax="1" volumeMax="0.50"  />
+    <retarderSound file="$data/sounds/transmission/retarderET2015.wav"                    pitchOffset="0.65"  volume="0.17" indoorVolumeFactor="0.93"  indoorLowpassGain="0.95" minSpeed="1" pitchMax="1.47"   volumeMax="0.30"  />
+    <attachSound file="$data/sounds/attach.wav"                                           pitchOffset="1.00"  volume="0.80" indoorVolumeFactor="0.70"  indoorLowpassGain="0.95"/>
+    <hydraulicSound file="$data/sounds/hydraulicUp.wav"                                   pitchOffset="0.55"  volume="0.80" indoorVolumeFactor="0.70"  indoorLowpassGain="0.95" />
+    <honkSound file="$data/sounds/horn.wav"                                               pitchOffset="1.00"  volume="1.00" indoorVolumeFactor="0.70"  indoorLowpassGain="0.95" radius="70" innerRadius="10" />
+    <brakeCompressor capacity="10000" fillSpeed="290" />
+    <maximalAirConsumptionPerFullStop value="1500" />
+    <brakeCompressorStartSound file="$data/sounds/technicalAccessories/regulator_valve2.wav"      pitchOffset="1.00" volume="1.10" indoorVolumeFactor="0.90"  indoorLowpassGain="0.95"/>
+    <brakeCompressorRunSound file="$data/sounds/technicalAccessories/compressor_idle.wav"         pitchOffset="0.72" volume="0.25" indoorVolumeFactor="0.50"  indoorLowpassGain="0.95" pitchMax="1.00"   />
+    <brakeCompressorStopSound file="$data/sounds/technicalAccessories/brakeOld.wav"               pitchOffset="0.85" volume="0.80" indoorVolumeFactor="0.60"  indoorLowpassGain="0.95"/>
+    <compressedAirSound file="$data/sounds/technicalAccessories/compressor_stop.wav"              pitchOffset="1.00" volume="0.80" indoorVolumeFactor="0.60"  indoorLowpassGain="0.95"/>
+    <airReleaseValveSound file="$data/vehicles/steerable/jcb/jcb_module.wav"                      pitchOffset="0.80" volume="1.00" indoorVolumeFactor="0.70"  indoorLowpassGain="0.95"/>
+
+    <washable dirtDuration="50" washDuration="1" workMultiplier="4" />
+
+    <components count="2">
+        <component1 centerOfMass="0 1.00 0.0" solverIterationCount="10" />
+        <component2 centerOfMass="0 0.70 0" solverIterationCount="20" />
+        <joint component1="0" component2="1" index="0>18" rotLimit="0 0 10" transLimit="0 0 0" maxRotDriveForce="0 0 50" rotDriveRotation="- - 0" rotDriveSpring="0 0 5" rotDriveDamping="0 0 5" breakable="false"/>
+    </components>
+
+    <schemaOverlay file="$dataS2/menu/schemas/vehicleSchema.png" fileSelected="$dataS2/menu/schemas/vehicleSchemaSelected.png" width="0.5" height="0.5" attacherJointPosition="0.5 0" />
+    
+    
+    <indoorHud>
+         <fuel animName="fuelDisplay" />
+         <speed animName="speedDisplay" />      
+    </indoorHud>
+    
+    <animations>
+        <animation name="fuelDisplay">
+            <part node="0>26|0|0|0" startTime="0" endTime="1" startRot="0 20 0" endRot="0 -20 0" />
+        </animation>
+        <animation name="speedDisplay">
+            <part node="0>26|0|1|0" startTime="0" endTime="1" startRot="0 30 0" endRot="0 -140 0" />
+        </animation>
+    </animations>
+    
+    <animParts>
+         <animPart index="0>2|0|2|0" id="bajto" showHelp="false" rotMin="0 0 0" rotMax="0 -180 0" moveTime="1" />
+         <animPart index="0>2|0|3|0" id="jajto" showHelp="false" rotMin="0 0 0" rotMax="0 180 0" moveTime="1" />
+         <animPart index="0>2|0|0|2" id="motorbuko" showHelp="false" rotMin="0 0 0" rotMax="45 0 0" moveTime="1" />
+         <animPart index="0>2|0|4" id="teto" showHelp="false" rotMin="0 0 0" rotMax="-8 0 0" moveTime="1" />
+         <animPart index="0>2|0|1|0" id="ablak" showHelp="false" rotMin="0 0 0" rotMax="40 0 0" moveTime="1" />
+    </animParts>
+    
+    <rimColorConfigurations>
+        <rimColorConfiguration color="1 0 0 1" />
+        <rimColorConfiguration color="1 0.1 0.0 1" price="100" icon="$dataS2/menu/hud/configurations/config_rimColor.png" />
+		<rimColorConfiguration color="1 0.1 0.05 1" price="100" icon="$dataS2/menu/hud/configurations/config_rimColor.png" />
+		<rimColorConfiguration color="0.2 0.62 1.0 1" price="100" icon="$dataS2/menu/hud/configurations/config_rimColor.png" />
+		<rimColorConfiguration color="1 1 0.65 1" price="100" icon="$dataS2/menu/hud/configurations/config_rimColor.png" />
+		<rimColorConfiguration color="0 0 0 1" price="100" icon="$dataS2/menu/hud/configurations/config_rimColor.png" />
+		<rimColorConfiguration color="0.5 0.5 0.5 1" price="100" icon="$dataS2/menu/hud/configurations/config_rimColor.png" />
+        <!--colorNode node="1>1" />
+        <colorNode node="1>2" /-->
+        <colorNode node="0>0" />
+        <colorNode node="0>1" />
+    </rimColorConfigurations>
+    
+    
+    	<gearboxMogli autoStartStop="false" maxAIRange2="3">
+		
+			<gears defaultGear="6" shiftTimeMs="800" speedMatching="true">
+				<gear speed="0.00" name="N"/>
+				<gear forwardOnly="true" speed="2.50" name="1"/>
+				<gear forwardOnly="true" speed="4.26" name="2"/>
+				<gear forwardOnly="true" speed="7.24" name="3"/>
+				<gear forwardOnly="true" speed="8.90" name="4"/>
+				<gear forwardOnly="true" speed="10.44" name="5"/>
+				<gear forwardOnly="true" speed="12.33" name="6"/>
+				<gear forwardOnly="true" speed="15.15" name="7"/>
+				<gear speed="5.26" reverseOnly="true" name="R1"/>
+				<gear forwardOnly="true" speed="17.92"  name="8"/>
+				<gear forwardOnly="true" speed="33.38" name="9"/>
+				<gear speed="8.97" reverseOnly="true" name="R2"/>				
+			</gears>
+
+		</gearboxMogli>
+	
+    
+    <speedRotatingParts>
+        <speedRotatingPart index="0>29|6|0|0|0" wheelIndex="0" wheelScale="2" />
+        <speedRotatingPart index="0>29|6|0|1|0" wheelIndex="0" wheelScale="2" />
+        <speedRotatingPart index="0>29|6|0|2|0" wheelIndex="0" wheelScale="2" />
+        <speedRotatingPart index="0>29|6|1|0|0" wheelIndex="0" wheelScale="2" />
+        <speedRotatingPart index="0>29|6|1|1|0" wheelIndex="0" wheelScale="2" />
+        <speedRotatingPart index="0>29|6|1|2|0" wheelIndex="0" wheelScale="2" />
+    </speedRotatingParts>
+
+    <lights>
+        <low>
+            <light                       decoration="0>30|0|0"   lightTypes="0 3" />
+            <light realLight="0>30|0|1"                          lightTypes="0" excludedLightTypes="3" /> <!--FrontLights-->
+            <light                       decoration="0>30|2|0"   lightTypes="0 1"/> <!--BackLights-->
+            <light realLight="0>30|1|0|1" decoration="0>30|1|0|0" lightTypes="1"/> <!--WorklightBack-->
+            <light                       decoration="0>30|1|1|0" lightTypes="2"/> <!--WorklightFront-->
+            <light realLight="0>30|0|2"                          lightTypes="3"/> <!--HighBeam -->
+        </low>
+        <high>
+            <light                       decoration="0>30|0|0"   lightTypes="0 3" />
+            <light realLight="0>30|0|3"                          lightTypes="0" excludedLightTypes="2 3" /> <!--FrontLights-->
+            <light realLight="0>30|2|1"   decoration="0>30|2|0"   lightTypes="0 3" /> <!--BackLights-->
+            <light realLight="0>30|1|0|2" decoration="0>30|1|0|0" lightTypes="1" /> <!--WorklightBack  -->
+            <light realLight="0>30|1|1|1" decoration="0>30|1|1|0" lightTypes="2"  /> <!--WorklightFront -->
+            <light realLight="0>30|0|4"                          lightTypes="3" excludedLightTypes="2" /> <!--HighBeam-->
+        </high>
+        <states>
+            <state lightTypes="0" />
+            <state lightTypes="0 1" />
+            <state lightTypes="0 1 2" />
+        </states>
+    </lights>
+
+    <brakeLights>
+        <brakeLight realLight="0>30|2|1" decoration="0>30|4|0" />
+    </brakeLights>
+
+    <turnLights>
+        <turnLightLeft realLight="0>30|3|0|1" decoration="0>30|3|0|0" />
+        <turnLightLeft realLight="0>30|3|0|2" />
+        <turnLightRight realLight="0>30|3|1|1" decoration="0>30|3|1|0" />
+        <turnLightRight realLight="0>30|3|1|2" />
+    </turnLights>
+	
+	<mirrors>
+        <mirror index="0>2|0|2|0|1|0" prio="1" />
+        <mirror index="0>2|0|3|0|1|0" prio="1" />
+    </mirrors>
+
+</vehicle>

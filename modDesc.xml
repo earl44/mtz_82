@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="31">
+    <author>earl</author>
+    <version>0.1</version>
+    <title>
+        <en>MTZ 80</en>
+        <de>MTZ 80</de>
+    </title>
+    <description>
+        <en><![CDATA[Farming Simulator 17 - MTZ 80]]></en>
+        <de><![CDATA[Landwirtschafts-Simulator 17 - MTZ 80]]></de>
+        <fr><![CDATA[Farming Simulator 17 - MTZ 80]]></fr>
+        <pl><![CDATA[Farming Simulator 17 - MTZ 80]]></pl>
+    </description>
+    <iconFilename>store_mtz82.dds</iconFilename>
+    <multiplayer supported="true" />
+
+	<specializations>
+	    <specialization name="Fenster" className="toggleAnimatedParts" filename="toggleAnimatedParts.lua"/>
+	</specializations>
+	
+    <vehicleTypes>
+    <type name="mtz" className="Vehicle" filename="$dataS/scripts/vehicles/Vehicle.lua">
+        <specialization name="attacherJoints" />
+        <specialization name="frontloaderAttacher" />
+        <specialization name="lights" />
+        <specialization name="animatedVehicle" />
+        <specialization name="speedRotatingParts" />
+        <specialization name="motorized" />
+        <specialization name="steerable" />
+        <specialization name="drivable" />
+        <specialization name="articulatedAxis" />
+        <specialization name="cylindered" />
+        <specialization name="aiVehicle" />
+        <specialization name="crawler" />
+        <specialization name="bunkerSiloCompacter" />
+        <specialization name="honk" />
+        <specialization name="washable" />
+        <specialization name="mountable" />
+        <specialization name="Fenster" />
+    </type>
+    </vehicleTypes>
+    <storeItems>
+        <storeItem rootNode="vehicle" xmlFilename="mtz80.xml"/>
+    </storeItems>
+    
+    <brands>
+        <brand name="MTZ" title="MTZ" image="mtzlogo.dds"/>
+    </brands>
+    
+    <inputBindings>
+    	<input name="bajto" key1="KEY_KP_7" button="" />
+        <input name="jajto" key1="KEY_KP_9" button="" />
+        <input name="teto" key1="KEY_KP_8" button="" />
+        <input name="motorbuko" key1="KEY_KP_4" button="" />
+        <input name="ablak" key1="KEY_KP_0" button="" />
+     </inputBindings>
+</modDesc>

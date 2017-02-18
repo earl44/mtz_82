@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<wheel>
+    <configurations>
+        <configuration index="basic" >
+            <tire filename="MTZ/Mtz_Tire_Front.i3d" indexLeft="0|0" indexRight="0|0" />
+			<outerRim filename="MTZ/Mtz_Rim.i3d" index="0|2"  />
+			<innerRim filename="MTZ/Mtz_Rim.i3d" indexLeft="0|0" indexRight="0|1"  />
+        </configuration>
+    </configurations>
+    <size radius="0.47" width="0.3" maxDeformation="6" />
+    <physics mass="0.153" frictionScale="2" maxLongStiffness="9" maxLatStiffness="110" maxLatStiffnessLoad="2" />
+    <tire type="mud" atlasIndex="0" />
+</wheel>
